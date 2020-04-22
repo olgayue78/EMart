@@ -1,6 +1,18 @@
 .navbar {
-    height: 80px;
+    height: 100px;
     background-color: #232F3E;
+    min-width: 1280px;
     width: 100%;
+    max-width: 1900px;
     margin-bottom: 0px;
+}
+.container-fluid{
+    height: 100px;
+    min-width: 1280px;
+    width: 100%;
+    max-width: 1900px;
+    margin-bottom: 0px;
+}
+.emart-nav-keyword {
+    padding-right: 0px;
 }

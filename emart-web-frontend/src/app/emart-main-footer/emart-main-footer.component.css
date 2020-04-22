@@ -1,14 +1,4 @@
-.div-main-footer {
-    position: absolute;
-    width: 100%;
-    bottom:0px;
-    margin: 0px;
-    height: 55px;
-    background-color: #232f3e;
-    padding-top: 15px;
-    padding-bottom: 10px;
 
-}
 .label-copyright {
-    color:white;
+    text-align: center;
 }

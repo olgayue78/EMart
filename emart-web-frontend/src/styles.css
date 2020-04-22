@@ -1,7 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    position: absolute;
+    min-width: 1280px;
+    width: 100%;
+    max-width: 1900px;
+    overflow: auto;
+
+}
 .btn-default:hover {
     background-color: #F0C14F;
 }
 .btn-default {
     background-color: #F0C14F;
+}
+.btn-emart {
+    border-color: #EB7A67;
+    color: #EB7A67;
+    background-color:white;
+}
+.btn-emart:hover {
+    border-color: #EB7A67;
+    color: #EB7A67;
+    background-color:white;
 }
