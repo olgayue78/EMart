@@ -10,6 +10,7 @@ import { EmartLoginComponent } from './emart-login/emart-login.component';
 import { EmartCustomerSignupComponent } from './emart-customer-signup/emart-customer-signup.component';
 import { EmartSellerSignupComponent } from './emart-seller-signup/emart-seller-singup.component';
 import { EmartSellerSignupDetailComponent } from './emart-seller-signup-detail/emart-seller-signup-detail.component';
+import { EmartSearchResultComponent } from './emart-search-result/emart-search-result.component';
 
 @NgModule({
    declarations: [
@@ -21,6 +22,7 @@ import { EmartSellerSignupDetailComponent } from './emart-seller-signup-detail/e
       EmartCustomerSignupComponent,
       EmartSellerSignupComponent,
       EmartSellerSignupDetailComponent,
+      EmartSearchResultComponent
    ],
    imports: [
       BrowserModule,

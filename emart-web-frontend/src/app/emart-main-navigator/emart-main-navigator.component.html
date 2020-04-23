@@ -1,18 +1,20 @@
-<nav class="navbar navbar-fixed-top" role="navigation">
-  <div class="container-fluid"> 
-  <div class="navbar-header">
-      <a class="navbar-brand" href="#"><h1>EMart</h1></a>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid row"> 
+  <div class="navbar-header col-sm-2">
+      <a class="navbar-brand emart-nav-navbar-brand" href="#">EMart</a>
   </div>
-  <form class="navbar-form" role="search">
-      <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <button type="submit" class="btn btn-default">
-        <span class="glyphicon glyphicon-search"></span>
-      </button>
-  </form>
+  <div class="nav navbar-nav col-sm-8">
+    <form class="navbar-left emart-nav-navbar-form" role="search">
+        <div class="form-group emart-nav-form-group">
+            <input type="text" class="form-control emart-nav-form-control">
+        </div>
+        <button type="submit" class="btn btn-default emart-nav-btn-submit">
+            <span class="glyphicon glyphicon-search"></span>
+        </button>
+    </form>
+</div>
   <ul class="nav navbar-nav navbar-right"> 
-      <li class="dropdown">
+      <li class="dropdown emart-nav-nav-dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hello Olgayue
               <span class="caret"></span></a>
           <ul class="dropdown-menu">
