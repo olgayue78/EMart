@@ -17,6 +17,12 @@ import { EmartPurchaseHistoryComponent } from './emart-purchase-history/emart-pu
 import { EmartSellerNavigatorComponent } from './emart-seller-navigator/emart-seller-navigator.component';
 import { EmartAddItemComponent } from './emart-add-item/emart-add-item.component';
 import { EmartViewStockComponent } from './emart-view-stock/emart-view-stock.component';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+   { path: 'singup/customer', component: EmartCustomerSignupComponent },
+   { path: 'singup/seller', component: EmartSellerSignupComponent },
+ ];
 
 @NgModule({
    declarations: [
@@ -38,7 +44,11 @@ import { EmartViewStockComponent } from './emart-view-stock/emart-view-stock.com
    ],
    imports: [
       BrowserModule,
-      AppRoutingModule
+      AppRoutingModule,
+      RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: true } // <-- debugging purposes only
+      )
    ],
    providers: [],
    bootstrap: [

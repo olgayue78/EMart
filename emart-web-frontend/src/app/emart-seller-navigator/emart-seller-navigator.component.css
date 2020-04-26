@@ -1,0 +1,22 @@
+.navbar {
+    height: 100px;
+    background-color: #232F3E;
+    min-width: 1280px;
+    width: 100%;
+    max-width: 1900px;
+    margin-bottom: 0px;
+    position:fixed;
+    z-index:99;
+}
+.container-fluid{
+    min-width: 1280px;
+    width: 100%;
+    max-width: 1900px;
+    font-size: 18px;
+    padding-top: 20px;
+}
+
+.emart-nav-navbar-brand, .emart-nav-navbar-brand:focus, .emart-nav-navbar-brand:hover{
+    font-size: 30px;
+    color: white;
+}

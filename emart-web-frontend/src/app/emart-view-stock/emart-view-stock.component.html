@@ -1,32 +1,36 @@
 <app-emart-seller-navigator></app-emart-seller-navigator>
 <div class="emart-main-container container">
   <div class="col-xs-3" id="myScrollspy">
-      <ul class="nav nav-tabs nav-stacked" id="myNav">
-          <li ><a href="#section-1">View Stock</a></li>
-          <li class="active"><a href="#section-2">Add Item</a></li>
+      <ul class="nav nav-tabs nav-stacked emart-nav-tabs" id="myNav">
+          <li><a></a></li>
+          <li class="active" ><a href="#section-1">View Stock</a></li>
+          <li><a href="#section-2">Add Item</a></li>
+          <li><a></a></li>
       </ul>
   </div>
   <div class="col-sm-9">
-    <div class="row">
-          <div class="form-group col-sm-3">
+    <div class="row form-inline emart-stock-filter" role="form">
+          <div class="form-group col-sm-4">
             <label class="control-label">Item name</label>
-            <input class="form-control" id="form-control" type="text" >
+            <input class="form-control input-sm" id="form-control" type="text" >
           </div>
           <div class="form-group col-sm-3">
-            <label class="control-label">Item name</label>
-            <input class="form-control" id="form-control" type="text" >
+            <label class="control-label">From</label>
+            <input class="form-control input-sm" id="form-control" type="date" >
           </div>
           <div class="form-group col-sm-3">
-            <label class="control-label">Item name</label>
-            <input class="form-control" id="form-control" type="text" >
+            <div class="col-sm-offset-1">
+              <label class="control-label">To</label>
+              <input class="form-control input-sm" id="form-control" type="date" >
+            </div>
           </div>
-          <div class="form-group col-sm-3">
-            <button type="button" class=" btn btn-default btn-emart">Save & Sell Item</button>
+          <div class="form-group col-sm-2">
+            <button type="button" class=" btn btn-default btn-sm  btn-emart">Save & Sell Item</button>
           </div>
     </div>
     <div class="row">
       <div class="table-responsive">
-        <table class="table  table-striped emart-result-table">
+        <table class="table  table-striped emart-stock-table">
           <thead>
               <th>Item name</th>
               <th>sales volume</th>
@@ -38,9 +42,65 @@
               <td>5</td>
               <td>747</td>
             </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
+<app-emart-main-footer></app-emart-main-footer>

@@ -23,3 +23,13 @@ body {
 .emart-main-container{
     margin-top: 105px;
 }
+
+.emart-nav-tabs{
+    border: 1px solid #F0C14F;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background-color: #ED9220;
+    border: 0px;
+    margin-right: 0px;
+    border-radius: 0;
+}
