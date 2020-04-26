@@ -13,6 +13,10 @@ import { EmartSellerSignupDetailComponent } from './emart-seller-signup-detail/e
 import { EmartSearchResultComponent } from './emart-search-result/emart-search-result.component';
 import { EmartItemDetailComponent } from './emart-item-detail/emart-item-detail.component';
 import { EmartShoppingCartComponent } from './emart-shopping-cart/emart-shopping-cart.component';
+import { EmartPurchaseHistoryComponent } from './emart-purchase-history/emart-purchase-history.component';
+import { EmartSellerNavigatorComponent } from './emart-seller-navigator/emart-seller-navigator.component';
+import { EmartAddItemComponent } from './emart-add-item/emart-add-item.component';
+import { EmartViewStockComponent } from './emart-view-stock/emart-view-stock.component';
 
 @NgModule({
    declarations: [
@@ -26,7 +30,11 @@ import { EmartShoppingCartComponent } from './emart-shopping-cart/emart-shopping
       EmartSellerSignupDetailComponent,
       EmartSearchResultComponent,
       EmartItemDetailComponent,
-      EmartShoppingCartComponent
+      EmartShoppingCartComponent,
+      EmartPurchaseHistoryComponent,
+      EmartSellerNavigatorComponent,
+      EmartAddItemComponent,
+      EmartViewStockComponent
    ],
    imports: [
       BrowserModule,
