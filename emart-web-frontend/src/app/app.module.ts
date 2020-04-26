@@ -11,6 +11,8 @@ import { EmartCustomerSignupComponent } from './emart-customer-signup/emart-cust
 import { EmartSellerSignupComponent } from './emart-seller-signup/emart-seller-singup.component';
 import { EmartSellerSignupDetailComponent } from './emart-seller-signup-detail/emart-seller-signup-detail.component';
 import { EmartSearchResultComponent } from './emart-search-result/emart-search-result.component';
+import { EmartItemDetailComponent } from './emart-item-detail/emart-item-detail.component';
+import { EmartShoppingCartComponent } from './emart-shopping-cart/emart-shopping-cart.component';
 
 @NgModule({
    declarations: [
@@ -22,7 +24,9 @@ import { EmartSearchResultComponent } from './emart-search-result/emart-search-r
       EmartCustomerSignupComponent,
       EmartSellerSignupComponent,
       EmartSellerSignupDetailComponent,
-      EmartSearchResultComponent
+      EmartSearchResultComponent,
+      EmartItemDetailComponent,
+      EmartShoppingCartComponent
    ],
    imports: [
       BrowserModule,

@@ -13,13 +13,13 @@ body {
 .btn-default {
     background-color: #F0C14F;
 }
-.btn-emart {
+.btn-emart, .btn-emart:hover, .btn-emart:focus {
     border-color: #EB7A67;
     color: #EB7A67;
     background-color:white;
+    border-radius: 0px;
 }
-.btn-emart:hover {
-    border-color: #EB7A67;
-    color: #EB7A67;
-    background-color:white;
+
+.emart-main-container{
+    margin-top: 105px;
 }

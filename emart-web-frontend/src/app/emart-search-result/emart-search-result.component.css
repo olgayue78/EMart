@@ -3,4 +3,17 @@
 }
 .emart-result-table{
     border-left: 1px solid #eee;
+    min-height:700px;
+}
+.emart-result-table>tbody>tr {
+    vertical-align: middle;
+}
+
+.emart-result-table>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.emart-result-item-img{
+    max-width: 129px;
+    max-height: 149px;
 }
