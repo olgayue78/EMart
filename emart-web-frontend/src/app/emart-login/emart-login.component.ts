@@ -7,19 +7,25 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./emart-login.component.css']
 })
 export class EmartLoginComponent implements OnInit {
-
+  public email:any;
+  public password:any;
+  public role:any;
   constructor(
     private route: ActivatedRoute,
     private router: Router) {
    }
 
   ngOnInit() {
+    this.email="";
+    this.password="";
+    this.role="1";
   }
   
-  gotoSignup() {
-    // Pass along the hero id if available
-    // so that the HeroList component can select that hero.
-    // Include a junk 'foo' property for fun.
-    this.router.navigate(['/singup/customer', {}]);
+  signIn(){
+    if(this.role === "1"){
+      this.router.navigate(['/emart-customer-index']);
+    } else {
+      this.router.navigate(['/emart-view-stock']);
+    }
   }
 }

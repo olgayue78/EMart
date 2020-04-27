@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,8 +21,17 @@ import { EmartViewStockComponent } from './emart-view-stock/emart-view-stock.com
 import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
-   { path: 'singup/customer', component: EmartCustomerSignupComponent },
-   { path: 'singup/seller', component: EmartSellerSignupComponent },
+   {path: '',redirectTo:'/signin',pathMatch: 'full'},
+   { path: 'signin', component: EmartLoginComponent },
+   { path: 'signup-customer', component: EmartCustomerSignupComponent },
+   { path: 'signup-seller', component: EmartSellerSignupComponent },
+   { path: 'signup-seller-detail', component: EmartSellerSignupDetailComponent },
+   { path: 'emart-customer-index', component: EmartCustomerIndexComponent },
+   { path: 'emart-search-results', component: EmartSearchResultComponent },
+   { path: 'emart-shopping-cart', component: EmartShoppingCartComponent },
+   { path: 'emart-purchase-history', component: EmartPurchaseHistoryComponent },
+   { path: 'emart-add-item', component: EmartAddItemComponent },
+   { path: 'emart-view-stock', component: EmartViewStockComponent },
  ];
 
 @NgModule({
@@ -45,12 +55,18 @@ const appRoutes: Routes = [
    imports: [
       BrowserModule,
       AppRoutingModule,
+      FormsModule,
       RouterModule.forRoot(
         appRoutes,
         { enableTracing: true } // <-- debugging purposes only
       )
    ],
    providers: [],
+   exports: [
+      EmartMainNavigatorComponent,
+      EmartMainFooterComponent,
+      EmartSellerNavigatorComponent
+   ],
    bootstrap: [
       AppComponent
    ]

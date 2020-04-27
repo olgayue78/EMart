@@ -1,4 +1,4 @@
-<app-emart-main-navigator></app-emart-main-navigator>
+<app-emart-main-navigator #navigator></app-emart-main-navigator>
 <div class="emart-main-container">
     <div id="myCarousel" class="carousel slide emart-main-carouse">
             <!-- 轮播（Carousel）指标 -->
@@ -53,7 +53,7 @@
     </div>
     <div class="row ">
         <div class="col-sm-5"></div>
-        <button type="button" class="btn btn-default btn-emart col-sm-2">View Collections</button>
+        <button type="button" class="btn btn-default btn-emart col-sm-2" (click)="this.navigator.search()">View Collections</button>
     </div>
     
 </div>

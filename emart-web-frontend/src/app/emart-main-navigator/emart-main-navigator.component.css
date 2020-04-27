@@ -23,6 +23,7 @@
 
 .emart-nav-nav-dropdown > a, .emart-nav-nav-dropdown > a:focus, .emart-nav-nav-dropdown > a:hover{
     color: white;
+    background-color: #232F3E;
 }
 
 .glyphicon-shopping-cart, .glyphicon-shopping-cart:focus, .glyphicon-shopping-cart:hover{
