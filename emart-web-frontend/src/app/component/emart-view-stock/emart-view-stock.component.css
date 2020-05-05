@@ -1,0 +1,19 @@
+.emart-stock-filter{
+    border: 1px solid #F0C14F;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.emart-stock-table{
+    border: 1px solid #eee;
+    min-height:700px;
+    margin-top: 15px;
+}
+
+.emart-stock-table>tbody>tr {
+    vertical-align: middle;
+}
+
+.emart-stock-table>tbody>tr>td {
+    vertical-align: middle;
+}

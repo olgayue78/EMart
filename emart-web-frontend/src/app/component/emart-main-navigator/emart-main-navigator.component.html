@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid row"> 
+  <div class="navbar-header col-sm-2">
+      <a class="navbar-brand emart-nav-navbar-brand" href="/emart-customer-index">EMart</a>
+  </div>
+  <div class="nav navbar-nav col-sm-8">
+    <form class="navbar-left emart-nav-navbar-form" role="search">
+        <div class="form-group emart-nav-form-group">
+            <input type="text" class="form-control emart-nav-form-control">
+        </div>
+        <button type="submit" class="btn btn-default emart-nav-btn-submit" (click)="search()">
+            <span class="glyphicon glyphicon-search"></span>
+        </button>
+    </form>
+</div>
+  <ul class="nav navbar-nav navbar-right"> 
+      <li class="dropdown emart-nav-nav-dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Hello Olgayue
+            <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li>
+                <a href="/emart-purchase-history">Your Order</a></li>
+                <li class="divider"></li>
+            <li>
+                <a href="/signin">Sign Out</a></li>
+        </ul>
+      </li>
+      <li><a href="/emart-shopping-cart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li> 
+  </ul> 
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="panel panel-default col-sm-4 panel-sign-in">
+      <div class="panel-body">
+        <h1 class="control-label">Sign-In</h1>
+        <form class="form-horizontal col-sm-12 " role="form">
+          <div class="form-group">
+            <label class="control-label" for="Email">Email</label>
+            <input class="form-control" id="focusedInput" type="text" [(ngModel)]="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password</label>
+            <input class="form-control" id="form-control" type="text" [(ngModel)]="password"  name="password"  required>
+          </div>
+          <div class="form-group">
+            <select class="form-control"  [(ngModel)]="role"  name="role">
+              <option value="1">I am customer</option>
+              <option value="2">I am seller</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default col-sm-12" (click)="signIn()">Sign-In</button>
+          </div>
+          <div class="form-group">
+            <label>New to Emart? </label> <a routerLink="/signup-customer"> Create your Emart account</a>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+<app-emart-main-footer></app-emart-main-footer>

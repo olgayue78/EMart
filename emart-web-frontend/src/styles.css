@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    position: absolute;
+    min-width: 1280px;
+    width: 100%;
+    max-width: 1900px;
+    overflow: auto;
+
+}
+.btn-default:hover {
+    background-color: #F0C14F;
+}
+.btn-default {
+    background-color: #F0C14F;
+}
+.btn-emart, .btn-emart:hover, .btn-emart:focus {
+    border-color: #EB7A67;
+    color: #EB7A67;
+    background-color:white;
+    border-radius: 0px;
+}
+
+.emart-main-container{
+    margin-top: 105px;
+}
+
+.emart-nav-tabs{
+    border: 1px solid #F0C14F;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background-color: #ED9220;
+    border: 0px;
+    margin-right: 0px;
+    border-radius: 0;
+}
