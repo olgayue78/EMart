@@ -1,4 +1,4 @@
-package com.iibm.emart;
+package com.iibm.emart.microservicecloudbuyer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
