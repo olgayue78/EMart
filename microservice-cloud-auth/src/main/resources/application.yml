@@ -1,2 +1,9 @@
 server:
   port: 7900
+  
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3307/emart?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf-8
+    username: root
+    password: 123456
