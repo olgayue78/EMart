@@ -33,6 +33,6 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public Integer getUserByName(String userName, String password, String userRole) {
-    	return jdbcTemplate.queryForObject("select count(1) from USER where userName=? and password=? and userRole=?", Integer.class, userName, password, userRole);
+    	return jdbcTemplate.queryForObject("select count(1) from USER where userName=? and psw=? and userRole=?", Integer.class, userName, password, userRole);
     }
 }

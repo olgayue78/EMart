@@ -15,7 +15,12 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name="user",catalog="testdb")
 @DynamicUpdate
 public class User implements Serializable {
-    @Id
+    /**
+	 * User entity
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
 	private int id;

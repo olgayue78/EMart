@@ -13,8 +13,8 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
     
-    public boolean login(User user) {
-    	int userCount = userRepository.getUserByName(user.getUsername(),user.getPassword(), user.getUserRole());
+    public boolean login(String username,String password,String userRole) {
+    	int userCount = userRepository.getUserByName(username,password, userRole);
     	if(userCount>0) {
     		return true;
     	} else {
