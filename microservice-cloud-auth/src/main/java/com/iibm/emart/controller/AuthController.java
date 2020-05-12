@@ -21,12 +21,12 @@ public class AuthController {
     
     @GetMapping("/login")
     @ResponseBody
-	public ResponseData login( @RequestParam(value="username",required =false ) String username,@RequestParam(value="password",required =false ) String password,@RequestParam(value="userRole",required =false ) String userRole) {
+	public ResponseData login( @RequestParam(value="email",required =false ) String email,@RequestParam(value="password",required =false ) String password,@RequestParam(value="userRole",required =false ) String userRole) {
         try {
-    		if (userService.login(username, password, userRole)) {
+    		if (userService.login(email, password, userRole)) {
     			ResponseData responseData = ResponseData.ok();
-    			responseData.putDataValue("username", username);
-    			String token = JWT.sign(username, 30L * 24L * 3600L * 1000L);
+    			responseData.putDataValue("username", email);
+    			String token = JWT.sign(email, 30L * 24L * 3600L * 1000L);
     			if (token != null) {
     				responseData.putDataValue("token", token);
     			}

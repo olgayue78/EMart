@@ -29,7 +29,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public Integer getUserByName(String email, String password, String userRole) {
-		return jdbcTemplate.queryForObject("select count(1) from USER where email=? and psw=? and userRole=?",
+		return jdbcTemplate.queryForObject("select count(1) from USER where email=? and password=? and userRole=?",
 				Integer.class, email, password, userRole);
 	}
 }
