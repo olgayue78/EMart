@@ -21,4 +21,13 @@ public class UserService {
     		return false;
     	}
     }
+    
+    public boolean signup(User user) {
+    	if(userRepository.create(user)>0) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    	
+    }
 }

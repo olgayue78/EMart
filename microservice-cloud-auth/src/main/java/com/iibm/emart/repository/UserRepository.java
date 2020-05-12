@@ -2,11 +2,11 @@ package com.iibm.emart.repository;
 
 import org.springframework.stereotype.Repository;
 
+import com.iibm.emart.entity.User;
+
 @Repository
 public interface UserRepository {
-    void create(String name, Integer age);
-    void deleteByName(String name);
+	Integer create(User user);
     Integer getAllUsers();
-    void deleteAllUsers();
-    Integer getUserByName(String userName, String password, String userRole);
+    Integer getUserByName(String email, String password, String userRole);
 }

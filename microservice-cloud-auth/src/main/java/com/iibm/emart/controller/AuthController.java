@@ -2,10 +2,13 @@ package com.iibm.emart.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.iibm.emart.entity.User;
 import com.iibm.emart.service.UserService;
 import com.iibm.emart.utils.JWT;
 import com.iibm.emart.utils.ResponseData;
@@ -33,5 +36,22 @@ public class AuthController {
         } catch(Exception e) {
     		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, new String[] { "username or password is incorrect" });
         }
+    } 
+    
+    @PostMapping("/signup")
+    @ResponseBody
+	public ResponseData signup( @RequestBody User user) {
+    	try {
+        	if (userService.signup(user)) {
+        		ResponseData responseData = ResponseData.ok();
+    			responseData.putDataValue("user", user);
+    			return responseData;
+        	} else {
+        		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, new String[] { "error in create user" });
+        	}
+    		
+    	}catch(Exception e) {
+    		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, new String[] { "error in create user" });
+    	}
     }
 }
