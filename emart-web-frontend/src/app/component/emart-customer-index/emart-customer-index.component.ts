@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./emart-customer-index.component.css']
 })
 export class EmartCustomerIndexComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {

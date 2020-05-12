@@ -1,19 +1,33 @@
 {
 
-    "/": {
+    "/auth": {
 
-              "target":"http://localhost:7900",// 指向需要代理的地址和端口号
-
+              "target":"http://localhost:7900",
                "secure":false,
 
               "changeOrigin":true,
 
 "pathRewrite":{
 
-               "^/":""
+               "^/auth":""
 
              }
 
-    }
+    },
+    "/buyer": {
+
+      "target":"http://localhost:7901",
+
+       "secure":false,
+
+      "changeOrigin":true,
+
+"pathRewrite":{
+
+       "^/buyer":""
+
+     }
+
+  }
 
 }
