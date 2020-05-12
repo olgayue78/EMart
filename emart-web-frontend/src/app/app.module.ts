@@ -19,6 +19,7 @@ import { EmartSellerNavigatorComponent } from './component/emart-seller-navigato
 import { EmartAddItemComponent } from './component/emart-add-item/emart-add-item.component';
 import { EmartViewStockComponent } from './component/emart-view-stock/emart-view-stock.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
    {path: '',redirectTo:'/signin',pathMatch: 'full'},
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
    ],
    imports: [
       BrowserModule,
+      HttpClientModule,
       AppRoutingModule,
       FormsModule,
       RouterModule.forRoot(

@@ -6,7 +6,7 @@
   <div class="nav navbar-nav col-sm-8">
     <form class="navbar-left emart-nav-navbar-form" role="search">
         <div class="form-group emart-nav-form-group">
-            <input type="text" class="form-control emart-nav-form-control">
+            <input type="text" class="form-control emart-nav-form-control" [(ngModel)]="keyword"  [ngModelOptions]="{standalone: true}">
         </div>
         <button type="submit" class="btn btn-default emart-nav-btn-submit" (click)="search()">
             <span class="glyphicon glyphicon-search"></span>
