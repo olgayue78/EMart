@@ -29,7 +29,7 @@ public class PurchaseItem {
     @Column(name="qty")
 	int qty;
     @Column(name="price")
-	float price;
+	double price;
     @Column(name="purchaseDate")
 	Date purchaseDate;
 	public int getId() {
@@ -62,10 +62,10 @@ public class PurchaseItem {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
-	public float getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(float price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	public Date getPurchaseDate() {

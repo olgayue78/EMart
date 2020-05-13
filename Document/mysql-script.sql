@@ -57,7 +57,7 @@ CREATE TABLE emart.cartitem (
 	seller_id INT NULL,
 	buyer_id INT NULL,
 	CONSTRAINT cartitem_PK PRIMARY KEY (id),
-	CONSTRAINT cartitem_item_FK FOREIGN KEY (id) REFERENCES emart.item(id)
+	CONSTRAINT cartitem_item_FK FOREIGN KEY (item_id) REFERENCES emart.item(id)
 	CONSTRAINT cartitem_user_FK FOREIGN KEY (seller_id) REFERENCES emart.`user`(id) 
     CONSTRAINT cartitem_seller_FK FOREIGN KEY (buyer_id) REFERENCES emart.`user`(id) 
 )
