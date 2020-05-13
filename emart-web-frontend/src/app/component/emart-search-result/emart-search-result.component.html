@@ -29,15 +29,15 @@
             </div>
             <div class="form-group">
               <label class="control-label">Start Price</label>
-              <input class="form-control" type="text" >
+              <input class="form-control" type="text"  [(ngModel)]="filterCondition.priceForm" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
               <label class="control-label">End Price</label>
-              <input class="form-control" type="text" >
+              <input class="form-control" type="text" [(ngModel)]="filterCondition.priceTo" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="row ">
                 <div class="col-sm-12">
-                  <button type="button" class="btn btn-default btn-emart col-sm-7">Filter</button>
+                  <button type="button" class="btn btn-default btn-emart col-sm-7" (click)="filter()">Filter</button>
                 </div>
             </div>
         </div>
@@ -45,22 +45,22 @@
             <div class="table-responsive">
                 <table class="table emart-result-table">
                   <tbody>
-                    <tr>
+                    <tr (click)="showItemDetail()">
                       <td><img class="emart-result-item-img" src="../../assets/S10e.jpg"></td>
                       <td>Sumsung Galaxy S10e</td>
                       <td>$545.99</td>
                       <td>Seller1</td></tr>
-                    <tr>
+                    <tr (click)="showItemDetail()">
                       <td><img class="emart-result-item-img" src="../../assets/S6.jpg"></td>
                       <td>Sumsung Galaxy S6</td>
                       <td>$199.99/td>
                       <td>Seller2</td></tr>
-                    <tr>
+                    <tr (click)="showItemDetail()">
                       <td><img class="emart-result-item-img" src="../../assets/P30.jpg"></td>
                       <td>Huawei P30 Lite</td>
                       <td>$219.99</td>
                       <td>Seller1</td></tr>
-                    <tr>
+                    <tr (click)="showItemDetail()">
                       <td><img class="emart-result-item-img" src="../../assets/S10e.jpg"></td>
                       <td>Sumsung Galaxy S10e</td>
                       <td>$545.99</td>

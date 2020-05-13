@@ -1,6 +1,5 @@
 package com.iibm.emart.microservicecloudauth;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +27,6 @@ class MicroserviceCloudAuthApplicationTests {
     	user.setPassword("2123");
     	user.setUserRole("1");
         userRepository.create(user);
-//        userRepository.create("b", 2);
-//        userRepository.create("c", 3);
-//        userRepository.create("d", 4);
-//        userRepository.create("e", 5);
-//        // 删除两个用户
-//        userRepository.deleteByName("a");
-//        userRepository.deleteByName("e");
-//        // 查数据库，应该有5个用户
         Assert.assertEquals(userCount+1, userRepository.getAllUsers().intValue());
     }
 

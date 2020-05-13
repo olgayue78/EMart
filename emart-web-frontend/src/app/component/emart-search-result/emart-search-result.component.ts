@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BuyerService } from 'src/app/services/buyer.service';
 
 @Component({
   selector: 'app-emart-search-result',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./emart-search-result.component.css']
 })
 export class EmartSearchResultComponent implements OnInit {
-
-  constructor() { }
+  public filterCondition:any = {companyNames:[],priceForm:'',priceTo:''}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private buyerService:BuyerService) { }
 
   ngOnInit() {
   }
 
+  filter(){
+    this.buyerService.filter(this.filterCondition);
+  }
+
+  showItemDetail(){
+    this.router.navigate(['/emart-item-detail']);
+  }
 }

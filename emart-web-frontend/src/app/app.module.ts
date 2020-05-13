@@ -29,6 +29,7 @@ const appRoutes: Routes = [
    { path: 'signup-seller-detail', component: EmartSellerSignupDetailComponent },
    { path: 'emart-customer-index', component: EmartCustomerIndexComponent },
    { path: 'emart-search-results', component: EmartSearchResultComponent },
+   { path: 'emart-item-detail', component: EmartItemDetailComponent },
    { path: 'emart-shopping-cart', component: EmartShoppingCartComponent },
    { path: 'emart-purchase-history', component: EmartPurchaseHistoryComponent },
    { path: 'emart-add-item', component: EmartAddItemComponent },
