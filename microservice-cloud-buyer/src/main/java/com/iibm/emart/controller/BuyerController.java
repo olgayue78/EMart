@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iibm.emart.entity.CartItem;
+import com.iibm.emart.entity.PurchaseItem;
 import com.iibm.emart.model.CartItemDetail;
 import com.iibm.emart.model.FilterCondition;
 import com.iibm.emart.model.ItemDetail;
+import com.iibm.emart.model.PurchaseItemDetail;
 import com.iibm.emart.service.BuyerService;
 import com.iibm.emart.utils.ResponseData;
 
@@ -81,13 +83,56 @@ public class BuyerController {
 		
     }
     
-    @DeleteMapping("/cartItem}")
+    @DeleteMapping("/cartItem")
     @ResponseBody
 	public ResponseData cartItem(@RequestParam(value="itemId",required =false ) int itemId, @RequestParam(value="buyerId",required =true ) int buyerId) {
     	try {
     		buyerService.deleteCartItem(itemId,buyerId);
 			ResponseData responseData = ResponseData.ok();
 			responseData.putDataValue("cartItem", itemId);
+    		return responseData;
+    	} catch(Exception e) {
+    		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, e);
+    	}
+		
+    }
+    
+    @PutMapping("/purchaseItem")
+    @ResponseBody
+	public ResponseData purchaseItem(@RequestBody PurchaseItem purchaseItem) {
+    	try {
+    		buyerService.addPurchaseItem(purchaseItem);
+			ResponseData responseData = ResponseData.ok();
+			responseData.putDataValue("cartItem", purchaseItem);
+    		return responseData;
+    	} catch(Exception e) {
+    		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, e);
+    	}
+		
+    }
+    
+
+    @GetMapping("/purchaseItems")
+    @ResponseBody
+	public ResponseData purchaseItems(@RequestBody int buyerId) {
+    	try {
+    		List<PurchaseItemDetail> cartItemDetails = buyerService.getPurchaseItems(buyerId);
+			ResponseData responseData = ResponseData.ok();
+			responseData.putDataValue("cartItem", cartItemDetails);
+    		return responseData;
+    	} catch(Exception e) {
+    		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, e);
+    	}
+		
+    }
+    
+    @DeleteMapping("/purchaseItems")
+    @ResponseBody
+	public ResponseData purchaseItems(@RequestParam(value="purchaseItemId",required =false ) int purchaseItem, @RequestParam(value="buyerId",required =true ) int buyerId) {
+    	try {
+    		buyerService.deletePurchaseItem(purchaseItem,buyerId);
+			ResponseData responseData = ResponseData.ok();
+			responseData.putDataValue("cartItem", purchaseItem);
     		return responseData;
     	} catch(Exception e) {
     		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, e);

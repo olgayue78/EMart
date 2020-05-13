@@ -9,8 +9,10 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.iibm.emart.entity.CartItem;
+import com.iibm.emart.entity.PurchaseItem;
 import com.iibm.emart.model.CartItemDetail;
 import com.iibm.emart.model.ItemDetail;
+import com.iibm.emart.model.PurchaseItemDetail;
 import com.iibm.emart.repository.BuyerRepository;
 
 @Repository
@@ -65,7 +67,29 @@ public class BuyerRepositoryImpl implements BuyerRepository{
 	@Override
 	public List<CartItemDetail> getCartItems(int buyerId) {
 		RowMapper<CartItemDetail> rm = BeanPropertyRowMapper.newInstance(CartItemDetail.class);
-		String sql = "SELECT cartitem.item_id, item.item_name, item.price, cartitem.qty, cartitem.tax, user.bussiness_name, user.id FROM cartitem,user,item where cartitem.item_id = item.id and cartitem.seller_id = user.id and  cartitem.buyer_id = user.id  and cartitem.buyer_id = ?";
+		String sql = "SELECT cartitem.item_id, item.item_name, item.price, cartitem.qty, cartitem.tax, seller.bussiness_name, buyer.id FROM cartitem,user buyer,user seller,item where cartitem.item_id = item.id and  cartitem.buyer_id = buyer.id   and  cartitem.seller_id = seller.id and cartitem.buyer_id = ?";
+		return jdbcTemplate.query(sql,new Object[] {buyerId},rm);
+	}
+
+	@Override
+	public int addPurchaseItem(PurchaseItem purchaseItem) {
+		String sql = "INSERT INTO purchaseitem (buyer_id, seller_id, item_id, qty, price, purchase_date) VALUES(?, ?, ?, ?, ?, ?)";
+		return jdbcTemplate.update(sql,new Object[] {purchaseItem.getBuyerId(),purchaseItem.getSellerId(), purchaseItem.getItemId(),purchaseItem.getQty(),purchaseItem.getPrice(),purchaseItem.getPurchaseDate()});
+	}
+
+	@Override
+	public int deletePurchaseItem(int id, int buyerId) {
+		String sql = "DELETE FROM purchaseitem  WHERE buyer_id=?";
+		if(id > -1) {
+			sql = sql + " and id = " + id;
+		}
+		return jdbcTemplate.update(sql,new Object[] {buyerId});
+	}
+
+	@Override
+	public List<PurchaseItemDetail> getPurchaseItems(int buyerId) {
+		RowMapper<PurchaseItemDetail> rm = BeanPropertyRowMapper.newInstance(PurchaseItemDetail.class);
+		String sql = "SELECT item.id, item.item_name, item.price, purchaseitem.qty, purchaseitem.purchase_date FROM purchaseitem,user,item where purchaseitem.item_id = item.id and  purchaseitem.buyer_id = user.id  and purchaseitem.buyer_id = ?";
 		return jdbcTemplate.query(sql,new Object[] {buyerId},rm);
 	}
 

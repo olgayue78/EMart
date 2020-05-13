@@ -26,7 +26,7 @@ CREATE TABLE emart.item (
 	item_name varchar(512) NULL,
 	category varchar(100) NULL,
 	subcategory varchar(100) NULL,
-	price DECIMAL NULL,
+	price DOUBLE NULL,
 	stock_nmuber INT NULL,
 	description TEXT NULL,
 	seller_id INT NULL,
@@ -52,14 +52,31 @@ CREATE TABLE emart.cartitem (
 	id INT NOT NULL AUTO_INCREMENT,
 	item_id INT NULL,
 	qty INT NOT NULL,
-	tax DECIMAL NULL,
+	tax DOUBLE NULL,
+	discount DOUBLE NULL,
 	seller_id INT NULL,
 	buyer_id INT NULL,
-	discount DECIMAL NULL,
 	CONSTRAINT cartitem_PK PRIMARY KEY (id),
 	CONSTRAINT cartitem_item_FK FOREIGN KEY (id) REFERENCES emart.item(id)
 	CONSTRAINT cartitem_user_FK FOREIGN KEY (seller_id) REFERENCES emart.`user`(id) 
     CONSTRAINT cartitem_seller_FK FOREIGN KEY (buyer_id) REFERENCES emart.`user`(id) 
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE emart.purchaseitem (
+	id INT NOT NULL AUTO_INCREMENT,
+	buyer_id INT NULL,
+	seller_id INT NULL,
+	item_id INT NULL,
+	qty INT NULL,
+	price DOUBLE NULL,
+	purchase_date TIMESTAMP NULL,
+	CONSTRAINT purchaseitem_PK PRIMARY KEY (id),
+	CONSTRAINT purchaseitem_buyer_FK FOREIGN KEY (buyer_id) REFERENCES emart.`user`(id),
+	CONSTRAINT purchaseitem_seller_FK FOREIGN KEY (seller_id) REFERENCES emart.`user`(id),
+	CONSTRAINT purchaseitem_item_FK FOREIGN KEY (item_id) REFERENCES emart.item(id)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
