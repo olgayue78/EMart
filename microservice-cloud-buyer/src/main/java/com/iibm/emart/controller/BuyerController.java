@@ -8,11 +8,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.iibm.emart.entity.Item;
+import com.iibm.emart.model.FilterCondition;
+import com.iibm.emart.model.ItemDetail;
 import com.iibm.emart.service.BuyerService;
 import com.iibm.emart.utils.ResponseData;
 
@@ -25,7 +28,7 @@ public class BuyerController {
     @ResponseBody
 	public ResponseData search(@RequestParam(value="keyword",required =false ) String keyword) {
     	try {
-    		List<Item> items = buyerService.searchItemsByKeyword(keyword);
+    		List<ItemDetail> items = buyerService.searchItemsByKeyword(keyword);
 			ResponseData responseData = ResponseData.ok();
 			responseData.putDataValue("item", items);
     		return responseData;
@@ -35,6 +38,20 @@ public class BuyerController {
 		
     }
 
+    @GetMapping("/filter")
+    @ResponseBody
+	public ResponseData search(@RequestBody FilterCondition filterCondition) {
+    	try {
+    		List<ItemDetail> items = buyerService.filterItems(filterCondition.getCompanyNames(),filterCondition.getPriceFrom(),filterCondition.getPriceTo());
+			ResponseData responseData = ResponseData.ok();
+			responseData.putDataValue("item", items);
+    		return responseData;
+    	} catch(Exception e) {
+    		return ResponseData.customerError().putDataValue(ResponseData.ERRORS_KEY, e);
+    	}
+		
+    }
+    
     @GetMapping("/purchaseHistory/{keyword}")
     @ResponseBody
 	public ResponseData purchaseHistory(@PathVariable String keyword) {

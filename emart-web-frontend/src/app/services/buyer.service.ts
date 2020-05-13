@@ -35,4 +35,27 @@ constructor(
         }
       );
   }
+
+  
+  filter(filterCondition) {
+    debugger
+    const params = new HttpParams().set('filterCondition', JSON.stringify(filterCondition));
+    const findhttpOptions = {
+      headers: new HttpHeaders({ 'content-Type': 'application/json' }),
+      params: params
+    }
+    return this.httpClient.get<ResponseData>(this.searchUrl, findhttpOptions)
+      .subscribe(
+        data => {
+          if (data.code === 200) {
+            console.log("data", data);;
+          } else {
+            alert(data.data.errors[0]);
+          }
+        },
+        error => {
+          console.log("Error", error);;
+        }
+      );
+  }
 }

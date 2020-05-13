@@ -29,15 +29,15 @@
             </div>
             <div class="form-group">
               <label class="control-label">Start Price</label>
-              <input class="form-control" type="text" >
+              <input class="form-control" type="text"  [(ngModel)]="filterCondition.priceForm" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="form-group">
               <label class="control-label">End Price</label>
-              <input class="form-control" type="text" >
+              <input class="form-control" type="text" [(ngModel)]="filterCondition.priceTo" [ngModelOptions]="{standalone: true}">
             </div>
             <div class="row ">
                 <div class="col-sm-12">
-                  <button type="button" class="btn btn-default btn-emart col-sm-7">Filter</button>
+                  <button type="button" class="btn btn-default btn-emart col-sm-7" (click)="filter()">Filter</button>
                 </div>
             </div>
         </div>
