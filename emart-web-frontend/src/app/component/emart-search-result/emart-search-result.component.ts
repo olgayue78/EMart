@@ -20,4 +20,8 @@ export class EmartSearchResultComponent implements OnInit {
   filter(){
     this.buyerService.filter(this.filterCondition);
   }
+
+  showItemDetail(){
+    this.router.navigate(['/emart-item-detail']);
+  }
 }

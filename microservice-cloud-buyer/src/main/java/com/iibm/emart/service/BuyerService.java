@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.iibm.emart.entity.Item;
+import com.iibm.emart.entity.CartItem;
 import com.iibm.emart.model.ItemDetail;
 import com.iibm.emart.repository.BuyerRepository;
 
@@ -21,6 +21,10 @@ public class BuyerService {
 	
 	public  List<ItemDetail> filterItems(List<String> companyNames, String priceFrom, String priceTo) {
 		return buyerRepository.filterItems(companyNames, priceFrom, priceTo);
+	}
+	
+	public int addCartItem(CartItem cartItem) {
+		return buyerRepository.addCartItem(cartItem);
 	}
 
 }

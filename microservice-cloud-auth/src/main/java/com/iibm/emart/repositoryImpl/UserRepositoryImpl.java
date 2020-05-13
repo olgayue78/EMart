@@ -14,7 +14,7 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public Integer create(User user) {
-		return jdbcTemplate.update("INSERT INTO emart.`USER`"
+		return jdbcTemplate.update("INSERT INTO emart.`user`"
 				+ "(id, username, password, user_role, bussiness_address, gtsin, bussiness_name, websit_url, telephone, bank_name, bank_number, company_brief,email)"
 				+ "VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?);",
 				new Object[] { user.getUsername(), user.getPassword(), user.getUserRole(), user.getBussinessAddress(),
@@ -24,12 +24,12 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public Integer getAllUsers() {
-		return jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
+		return jdbcTemplate.queryForObject("select count(1) from user", Integer.class);
 	}
 
 	@Override
 	public Integer getUserByName(String email, String password, String userRole) {
-		return jdbcTemplate.queryForObject("select count(1) from USER where email=? and password=? and user_role=?",
+		return jdbcTemplate.queryForObject("select count(1) from user where email=? and password=? and user_role=?",
 				Integer.class, email, password, userRole);
 	}
 }

@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import com.iibm.emart.entity.CartItem;
 import com.iibm.emart.model.ItemDetail;
 import com.iibm.emart.repository.BuyerRepository;
 
@@ -42,6 +43,12 @@ public class BuyerRepositoryImpl implements BuyerRepository{
 			sql = sql + " and item.price <= " + Float.parseFloat(priceTo);
 		}
 		return jdbcTemplate.query(sql, new String[]{}, rm);
+	}
+
+	@Override
+	public int addCartItem(CartItem cartItem) {
+		String sql = "INSERT INTO emart.cartitem (item_id, qty, tax, seller_id, buyer_id, discount) VALUES(?, ?, ?, ?, ?, ?)";
+		return jdbcTemplate.update(sql,new Object[] {cartItem.getItemId(),cartItem.getQty(),cartItem.getTax(),cartItem.getSellerId(),cartItem.getBuyerId(),cartItem.getDiscount()});
 	}
 
 }

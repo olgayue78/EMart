@@ -48,3 +48,19 @@ ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_0900_ai_ci;
 
+CREATE TABLE emart.cartitem (
+	id INT NOT NULL AUTO_INCREMENT,
+	item_id INT NULL,
+	qty INT NOT NULL,
+	tax DECIMAL NULL,
+	seller_id INT NULL,
+	buyer_id INT NULL,
+	discount DECIMAL NULL,
+	CONSTRAINT cartitem_PK PRIMARY KEY (id),
+	CONSTRAINT cartitem_item_FK FOREIGN KEY (id) REFERENCES emart.item(id)
+	CONSTRAINT cartitem_user_FK FOREIGN KEY (seller_id) REFERENCES emart.`user`(id) 
+    CONSTRAINT cartitem_seller_FK FOREIGN KEY (buyer_id) REFERENCES emart.`user`(id) 
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
