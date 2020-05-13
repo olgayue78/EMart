@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.iibm.emart.entity.CartItem;
+import com.iibm.emart.model.CartItemDetail;
 import com.iibm.emart.model.ItemDetail;
 import com.iibm.emart.repository.BuyerRepository;
 
@@ -26,5 +27,12 @@ public class BuyerService {
 	public int addCartItem(CartItem cartItem) {
 		return buyerRepository.addCartItem(cartItem);
 	}
-
+	
+	public List<CartItemDetail> getCartItems(int buyerId){
+		return buyerRepository.getCartItems(buyerId);
+	}
+	
+	public int deleteCartItem(int itemId, int buyerId) {
+		return buyerRepository.deleteCartItem(itemId, buyerId);
+	}
 }
