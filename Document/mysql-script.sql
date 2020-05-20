@@ -2,7 +2,7 @@ Create database emart;
 
 CREATE TABLE emart.`user` (
 	id INT NOT NULL AUTO_INCREMENT,
-    username varchar(256) NULL;
+    username varchar(256) NULL,
 	email varchar(256) NOT NULL,
 	password varchar(100) NOT NULL,
 	user_role varchar(1) NOT NULL,
@@ -15,6 +15,15 @@ CREATE TABLE emart.`user` (
 	bank_number varchar(100) NULL,
 	company_brief TEXT NULL,
 	CONSTRAINT User_PK PRIMARY KEY (id)
+)
+ENGINE=InnoDB
+DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE emart.picture (
+	id INT NOT NULL AUTO_INCREMENT,
+	url varchar(512) NULL,
+	CONSTRAINT pictures_PK PRIMARY KEY (id)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
@@ -33,16 +42,7 @@ CREATE TABLE emart.item (
     picture_id INT NULL,
 	CONSTRAINT item_PK PRIMARY KEY (id),
 	CONSTRAINT item_User_FK FOREIGN KEY (id) REFERENCES emart.`user`(id),
-    ADD CONSTRAINT item_pictures_FK FOREIGN KEY (picture_id) REFERENCES emart.picture(id)
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_0900_ai_ci;
-
-CREATE TABLE emart.picture (
-	id INT NOT NULL AUTO_INCREMENT,
-	url varchar(512) NULL,
-	CONSTRAINT pictures_PK PRIMARY KEY (id)
+    CONSTRAINT item_pictures_FK FOREIGN KEY (picture_id) REFERENCES emart.picture(id)
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8mb4
@@ -57,8 +57,8 @@ CREATE TABLE emart.cartitem (
 	seller_id INT NULL,
 	buyer_id INT NULL,
 	CONSTRAINT cartitem_PK PRIMARY KEY (id),
-	CONSTRAINT cartitem_item_FK FOREIGN KEY (item_id) REFERENCES emart.item(id)
-	CONSTRAINT cartitem_user_FK FOREIGN KEY (seller_id) REFERENCES emart.`user`(id) 
+	CONSTRAINT cartitem_item_FK FOREIGN KEY (item_id) REFERENCES emart.item(id),
+	CONSTRAINT cartitem_user_FK FOREIGN KEY (seller_id) REFERENCES emart.`user`(id) ,
     CONSTRAINT cartitem_seller_FK FOREIGN KEY (buyer_id) REFERENCES emart.`user`(id) 
 )
 ENGINE=InnoDB
