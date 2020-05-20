@@ -7,3 +7,13 @@ spring:
     url: jdbc:mysql://192.168.99.100:3307/emart?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf-8
     username: root
     password: 123456
+  application:
+    name: microservice-cloud-buyer
+
+eureka:
+  client:
+    service-url: # EurekaServer
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
