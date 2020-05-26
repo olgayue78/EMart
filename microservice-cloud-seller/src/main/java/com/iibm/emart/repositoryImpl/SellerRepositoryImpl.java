@@ -26,7 +26,7 @@ public class SellerRepositoryImpl implements SellerRepository{
 	@Override
 	public int addItem(Item item) {
 		String sql = "INSERT INTO item (item_name, category, subcategory, price, stock_nmuber, description, seller_id, picture_id) VALUES(?, ?, ?, ?, ?, ?)";
-		return jdbcTemplate.update(sql,new Object[] {item.getItemName(),item.getCategory(), item.getSubcategory(),item.getStockNmuber(),item.getDescription(),item.getSellerid(),item.getPictureid()});
+		return jdbcTemplate.update(sql,new Object[] {item.getItemName(),item.getCategory(), item.getSubcategory(),item.getPrice(), item.getStockNmuber(),item.getDescription(),item.getSellerid(),item.getPictureid()});
 	}
 
 }

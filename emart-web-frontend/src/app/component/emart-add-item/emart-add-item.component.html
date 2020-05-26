@@ -10,34 +10,33 @@
     <form class="form-horizontal" role="form">
       <div class="form-group">
         <label for="inputPassword" class="control-label">Category</label>
-        <input class="form-control" id="form-control" type="text" >
+        <input class="form-control" id="form-control" type="text"  [(ngModel)]="item.category" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
         <label for="inputPassword" class="control-label">Subcategory</label>
-        <input class="form-control" id="form-control" type="text" >
+        <input class="form-control" id="form-control" type="text"  [(ngModel)]="item.subcategory" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
         <label for="inputPassword" class="control-label">Item name</label>
-        <input class="form-control" id="form-control" type="text" >
+        <input class="form-control" id="form-control" type="text"  [(ngModel)]="item.itemName" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
         <label for="inputPassword" class="control-label">Price</label>
-        <input class="form-control" id="form-control" type="text" >
+        <input class="form-control" id="form-control" type="text"  [(ngModel)]="item.price" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
         <label for="inputPassword" class="control-label">Amount of stock</label>
-        <input class="form-control" id="form-control" type="text" >
+        <input class="form-control" id="form-control" type="text"  [(ngModel)]="item.stockNmuber" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="form-group">
-        <label for="inputfile">Pictures</label>
-        <input type="file" id="inputfile">
+        <label for="inputfile">Pictures</label><input type="file" multiple accept="image/png" (change)="fileChange($event.target.files)">
       </div>
       <div class="form-group">
         <label for="inputPassword" class="control-label">Description</label>
-        <textarea class="form-control" rows="3"></textarea>
+        <textarea class="form-control" rows="3" [(ngModel)]="item.description" [ngModelOptions]="{standalone: true}"></textarea>
       </div>
       <div class="form-group">
-        <button type="button" class=" btn btn-default btn-emart">Save & Sell Item</button>
+        <button type="button" class=" btn btn-default btn-emart" (click)="addItem()">Add</button>
       </div>
     </form>
   </div>

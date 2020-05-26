@@ -7,7 +7,7 @@ import { ResponseData } from '../models/ResponseData';
   providedIn: 'root'
 })
 export class BuyerService {
-  private serviceUrl = 'http://127.0.0.1:7901';
+  private serviceUrl = 'http://127.0.0.1:9000/api/';
   private searchUrl = '/buyer/search';  // URL to web api
 
 constructor(

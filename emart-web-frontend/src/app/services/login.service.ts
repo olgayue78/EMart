@@ -16,9 +16,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class LoginService {
-  private serviceUrl = 'http://127.0.0.1:7900';
-  private loginUrl = '/login';  // URL to web api
-  private signupUrl = '/signup';  // URL to web api
+  private serviceUrl = 'http://127.0.0.1:9000/api';
+  private loginUrl = '/auth/login';  // URL to web api
+  private signupUrl = '/auth/signup';  // URL to web api
 
   constructor(
     private route: ActivatedRoute,
