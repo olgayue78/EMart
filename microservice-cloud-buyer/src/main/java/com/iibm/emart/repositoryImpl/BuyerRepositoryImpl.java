@@ -23,14 +23,14 @@ public class BuyerRepositoryImpl implements BuyerRepository{
 	@Override
 	public List<ItemDetail> searchItemsByKeyword(String keyword) {
 		RowMapper<ItemDetail> rm = BeanPropertyRowMapper.newInstance(ItemDetail.class);
-		return jdbcTemplate.query("select item.*, user.bussiness_name, picture.url from item,user,picture where item.seller_id = user.id and item.picture_id = picture.id and item_name LIKE CONCAT('%',?,'%') or category LIKE CONCAT('%',?,'%') or description LIKE CONCAT('%',?,'%')",
+		return jdbcTemplate.query("select item.*, user.bussiness_name, picture.url from item,user,picture where item.seller_id = user.id and item.id = picture.item_id and item_name LIKE CONCAT('%',?,'%') or category LIKE CONCAT('%',?,'%') or description LIKE CONCAT('%',?,'%')",
 				 new String[]{keyword, keyword, keyword}, rm);
 	}
 
 	@Override
 	public List<ItemDetail> filterItems(List<String> companyNames, String priceFrom, String priceTo) {
 		RowMapper<ItemDetail> rm = BeanPropertyRowMapper.newInstance(ItemDetail.class);
-		String sql = "select item.*, user.bussiness_name, picture.url from item,user,picture where item.seller_id = user.id and item.picture_id = picture.id";
+		String sql = "select item.*, user.bussiness_name, picture.url from item,user,picture where item.seller_id = user.id and item.id = picture.item_id";
 		String companyNamesStr = "[";
 		if(companyNames.size() > 0) {
 			for(String companyName : companyNames){

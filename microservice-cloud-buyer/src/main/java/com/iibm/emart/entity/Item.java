@@ -31,8 +31,6 @@ public class Item {
 	String description;
     @Column(name="seller_id")
 	int sellerid;
-    @Column(name="picture_id")
-	int pictureid;
 	public int getId() {
 		return id;
 	}
@@ -80,12 +78,6 @@ public class Item {
 	}
 	public void setSellerid(int sellerid) {
 		this.sellerid = sellerid;
-	}
-	public int getPictureid() {
-		return pictureid;
-	}
-	public void setPictureid(int pictureid) {
-		this.pictureid = pictureid;
 	}
 	
 }
